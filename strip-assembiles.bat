@@ -34,4 +34,9 @@ set outPath=%~dp0\package\lib\netstandard2.1
   xcopy "%managedPath%\%%a" "%outPath%\%%a" /y /v
 ))
 
+@REM Delete System.x, netstandard, and mscorlib dlls since they cause duplicate references (.netframework dev pack)
+del "%outPath%\System.*"
+del "%outPath%\mscorlib.dll"
+del "%outPath%\netstandard.dll"
+
 pause
