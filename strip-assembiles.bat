@@ -15,7 +15,7 @@ set exePath=%exePath:"=%
 set managedPath=%exePath:.exe=_Data\Managed%
 echo managedPath: %managedPath%
 
-set outPath=%~dp0\package\lib
+set outPath=%~dp0\package\lib\netstandard2.1
 
 @REM Strip all assembiles, but keep them private.
 %~dp0\tools\NStrip.exe "%managedPath%" -o %outPath%
